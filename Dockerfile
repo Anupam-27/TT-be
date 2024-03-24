@@ -1,3 +1,6 @@
+# Use a base image suitable for your backend application (e.g., Node.js)
+FROM node:20.11.1
+
 ARG FE_URL
 ARG JWT_SECRET_KEY
 ARG PORT
@@ -35,9 +38,6 @@ ENV MAILER_PASS=$MAILER_PASS
 ENV HOST=$HOST
 ENV USER=$USER
 ENV PASSWORD=$PASSWORD
-
-# Use a base image suitable for your backend application (e.g., Node.js)
-FROM node:20.11.1
 
 # Set the working directory in the container
 WORKDIR /app
