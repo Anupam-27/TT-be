@@ -16,24 +16,6 @@ jobs:
       - name: Build docker image
         run: |
           docker build \
-          --build-arg FE_URL='${{ secrets.FE_URL }}' \
-          --build-arg JWT_SECRET_KEY='${{ secrets.JWT_SECRET_KEY }}' \
-          --build-arg PORT='${{ secrets.PORT }}' \
-          --build-arg LINK_VERIFICATION='${{ secrets.LINK_VERIFICATION }}' \
-          --build-arg PUBLICPATH='${{ secrets.PUBLICPATH }}' \
-          --build-arg AWS_BUCKET_NAME='${{ secrets.AWS_BUCKET_NAME }}' \
-          --build-arg AWS_ACCESS_KEY_ID='${{ secrets.AWS_ACCESS_KEY_ID }}' \
-          --build-arg AWS_SECRET_ACCESS_KEY='${{ secrets.AWS_SECRET_ACCESS_KEY }}' \
-          --build-arg AWS_REGION='${{ secrets.AWS_REGION }}' \
-          --build-arg TWILIO_ACCOUNT_SID='${{ secrets.TWILIO_ACCOUNT_SID }}' \
-          --build-arg TWILIO_AUTH_TOKEN='${{ secrets.TWILIO_AUTH_TOKEN }}' \
-          --build-arg TWILIO_SERVICE_SID='${{ secrets.TWILIO_SERVICE_SID }}' \
-          --build-arg TWILIO_PHONE_NUMBER='${{ secrets.TWILIO_PHONE_NUMBER }}' \
-          --build-arg MAILER_EMAIL='${{ secrets.MAILER_EMAIL }}' \
-          --build-arg MAILER_PASS='${{ secrets.MAILER_PASS }}' \
-          --build-arg HOST='${{ secrets.HOST }}' \
-          --build-arg USER='${{ secrets.USER }}' \
-          --build-arg PASSWORD='${{ secrets.PASSWORD }}' \
           -t codehard04/tt-be \
           .
       - name: Publish image to docker hub
