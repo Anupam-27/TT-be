@@ -49,4 +49,5 @@ jobs:
             -e HOST=${{ secrets.HOST }} \
             -e USER=${{ secrets.USER }} \
             -e PASSWORD=${{ secrets.PASSWORD }} \
-         --name gaming-be-container codehard04/tt-be:latest
+            --name gaming-be-container \
+            codehard04/tt-be:latest
