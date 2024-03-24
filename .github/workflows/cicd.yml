@@ -30,8 +30,7 @@ jobs:
       - name: Delete old container
         run: docker rm -f gaming-be-container
       - name: Run docker container
-        run: |
-            docker run -d -p 7000:7000 \
+        run: docker run -d -p 7000:7000 \
             -e FE_URL=${{ secrets.FE_URL }} \
             -e JWT_SECRET_KEY=${{ secrets.JWT_SECRET_KEY }} \
             -e PORT=${{ secrets.PORT }} \
